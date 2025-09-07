@@ -1,5 +1,6 @@
 package Array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -48,6 +49,27 @@ public class TwoSum {
                 return new int[] { num_map.get(complement), i };
             }
             num_map.put(nums[i], i);
+        }
+        return new int[]{-1, -1};
+    }
+
+    public int[] twoSumSorted(int[] nums, int target) {
+        int n = nums.length;
+        int[][] numWithIndex = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            numWithIndex[i][0] = nums[i];
+            numWithIndex[i][1] = i;
+        }
+        Arrays.sort(numWithIndex, (a, b) -> a[0] - b[0]);
+        int left = 0, right = n - 1;
+        while (left < right) {
+            int sum = numWithIndex[left][0] + numWithIndex[right][0];
+            if (sum == target)
+                return new int[]{numWithIndex[left][1], numWithIndex[right][1]};
+            else if (sum < target)
+                left++;
+            else
+                right--;
         }
         return new int[]{-1, -1};
     }
