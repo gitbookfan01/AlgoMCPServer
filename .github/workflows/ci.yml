@@ -3,7 +3,7 @@ name: Java CI
 on:
   push:
     branches-ignore:
-      - main   # run on any branch except main
+      - main
   pull_request:
     branches:
       - main
@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,26 +28,26 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Create Pull Request
-        id: create-pr
+        id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
-          base: main
+          base: main                        # ✅ target branch for PR
+          head: ${{ github.ref_name }}      # ✅ current branch as PR source
           title: "Automated PR from ${{ github.ref_name }}"
           body: "This PR was automatically created after tests passed."
-          commit-message: "Auto PR from ${{ github.ref_name }}"
           labels: automated
+          branch: "auto-pr/${{ github.ref_name }}"   # separate PR branch
 
       - name: Enable auto-merge
+        if: steps.cpr.outputs.pull-request-number != ''
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
