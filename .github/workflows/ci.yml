@@ -2,8 +2,8 @@ name: Java CI
 
 on:
   push:
-    branches:
-      - "!main"   # run on any branch except main
+    branches-ignore:
+      - main   # run on any branch except main
   pull_request:
     branches:
       - main
@@ -34,9 +34,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create PR
+      - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref_name }}
           base: main
           title: "Automated PR from ${{ github.ref_name }}"
@@ -47,5 +49,6 @@ jobs:
       - name: Enable auto-merge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
           merge-method: squash
