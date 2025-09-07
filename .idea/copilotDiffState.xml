@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/Array/TwoSumTest.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Array/TwoSumTest.java" />
+              <option name="updatedContent" value="package Array;&#10;&#10;import org.junit.jupiter.api.Test;&#10;import static org.junit.jupiter.api.Assertions.*;&#10;&#10;class TwoSumTest {&#10;    @Test&#10;    void testBasicCase() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{2, 7, 11, 15}, 9);&#10;        assertArrayEquals(new int[]{0, 1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testNoSolution() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{1, 2, 3}, 7);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testNegativeNumbers() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{-3, 4, 3, 90}, 0);&#10;        assertArrayEquals(new int[]{0, 2}, result);&#10;    }&#10;&#10;    @Test&#10;    void testDuplicates() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{3, 3}, 6);&#10;        assertArrayEquals(new int[]{0, 1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testMultipleSolutions() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{1, 2, 3, 4, 5}, 5);&#10;        // Should return the first valid pair&#10;        assertArrayEquals(new int[]{0, 3}, result);&#10;    }&#10;&#10;    @Test&#10;    void testEmptyArray() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{}, 1);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testSingleElement() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{5}, 5);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testTargetZero() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{0, 4, 0}, 0);&#10;        assertArrayEquals(new int[]{0, 2}, result);&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/Array/TwoSumTest.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/test/Array/TwoSumTest.java" />
+              <option name="updatedContent" value="package Array;&#10;&#10;import org.junit.jupiter.api.Test;&#10;import static org.junit.jupiter.api.Assertions.*;&#10;&#10;class TwoSumTest {&#10;    @Test&#10;    void testBasicCase() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{2, 7, 11, 15}, 9);&#10;        assertArrayEquals(new int[]{0, 1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testNoSolution() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{1, 2, 3}, 7);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testNegativeNumbers() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{-3, 4, 3, 90}, 0);&#10;        assertArrayEquals(new int[]{0, 2}, result);&#10;    }&#10;&#10;    @Test&#10;    void testDuplicates() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{3, 3}, 6);&#10;        assertArrayEquals(new int[]{0, 1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testMultipleSolutions() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{1, 2, 3, 4, 5}, 5);&#10;        // Should return the first valid pair&#10;        assertArrayEquals(new int[]{0, 3}, result);&#10;    }&#10;&#10;    @Test&#10;    void testEmptyArray() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{}, 1);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testSingleElement() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{5}, 5);&#10;        assertArrayEquals(new int[]{-1, -1}, result);&#10;    }&#10;&#10;    @Test&#10;    void testTargetZero() {&#10;        TwoSum ts = new TwoSum();&#10;        int[] result = ts.twoSum(new int[]{0, 4, 0}, 0);&#10;        assertArrayEquals(new int[]{0, 2}, result);&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
